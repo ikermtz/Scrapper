@@ -1,0 +1,8 @@
+Título:
+Desarrollo de una plataforma automatizado basado en IA para la evaluación de la positividad en perfiles públicos de Instagram y la recomendación personalizada de usuarios
+
+Resumen:
+Las redes sociales se han consolidado como un canal principal para la comunicación e interacción entre usuarios, influyendo significativamente en el bienestar emocional de las personas. Este trabajo tiene como objetivo desarrollar un sistema automatizado capaz de analizar la exposición que ofrecen ciertos perfiles conocidos de Instagram, con el fin de generar recomendaciones personalizadas para los usuarios.
+El proyecto se estructura en tres fases: en primer lugar, se implementa un bot scraper que navega por los perfiles seleccionados, extrayendo información de las publicaciones y comentarios. A partir de esta información, se genera un dataset con la exposición positiva o negativa que cada perfil transmite, analizando aspectos como el lenguaje, la interacción con seguidores y el contenido compartido.
+Posteriormente, se emplea un modelo externo que permite etiquetar cada perfil con una puntuación de positividad en una escala del 1 al 10. Finalmente, se desarrolla un chatbot inteligente que recomienda perfiles a los usuarios en función de sus preferencias, priorizando aquellos que transmiten exposición positiva.
+Este sistema pretende ofrecer una herramienta útil para fomentar un entorno digital más saludable en redes sociales, facilitando el acceso a contenido inspirador y reduciendo la exposición a perfiles que puedan afectar negativamente a los usuarios.

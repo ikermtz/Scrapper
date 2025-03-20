@@ -1,0 +1,42 @@
+
+                                                                RUTAS EN XPATH CON DETALLES:
+
+#Post del feed en el que se ven 3 posts por linea                                                                            *        *
+post_infeed_xpath = f"/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/div[2]/div/div/div[{i}]/div[{j}]/a"
+
+
+#Etiqueta alt que da instagram a cada post:                                                                              *        *
+caption_xpath = f"/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/div[2]/div/div/div[{i}]/div[{j}]/a/div[1]/div[1]/img"
+
+
+#Verificador de que no es un video:                                                                                   *         *
+video_xpath = f"/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/div[2]/div/div/div[{i}]/div[{j}]/a/div[2]/div/div/svg"
+
+
+# Source                                                                                                                *        *
+source_xpath = f"/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/div[2]/div/div/div[{i}]/div[{j}]/a/div[1]/div[1]/img"
+
+
+#Numero de likes
+likes_xpath = f"  /html/body/div[6]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/section[2]/div/div[2]/span/a/span/span"
+likes_xpath_2 = f"/html/body/div[6]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/section[2]/div/div/span/a/span/span"
+likes_xpath_3 = f"/html/body/div[5]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/section[2]/div/div[2]/span/a/span/span"
+likes_xpath_4 = f"/html/body/div[5]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/section[2]/div/div/span/a/span/span"
+
+#Pie de foto
+pie_foto_xpath = f"/html/body/div[6]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/div[1]/ul/div[1]/li/div/div/div[2]/div[1]/h1"
+pie_foto_xpath_2 = "/html/body/div[5]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/div[1]/ul/div[1]/li/div/div/div[2]/div[1]/h1"
+
+
+#Botón más comentarios
+mascoments_xpath = "/html/body/div[6]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/div[1]/ul/div[3]/div/div/li/div/button"
+
+#Comentarios                                                                                                                                          *
+comentario_xpath = f"  /html/body/div[6]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/div[1]/ul/div[3]/div/div/div[{k}]/ul/div/li/div/div/div[2]/div[1]/span"
+comentario_xpath_2 = f"/html/body/div[5]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/div[1]/ul/div[3]/div/div/div[{k}]/ul/div/li/div/div/div[2]/div[1]/span"
+comentario_xpath_3 = f"/html/body/div[6]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/div[1]/ul/div[2]/div/div/div[{k}]/ul/div/li/div/div/div[2]/div[1]/span"
+comentario_xpath_3 = f"/html/body/div[5]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/div[1]/ul/div[2]/div/div/div[{k}]/ul/div/li/div/div/div[2]/div[1]/span"
+
+#Likes comentario                                                                                                                                     *
+likescomment_xpath = f"/html/body/div[6]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/div[1]/ul/div[3]/div/div/div[{k}]/ul/div/li/div/div/div[2]/div[2]/span/button[1]/span"
+likescomment_xpath_2 = f"/html/body/div[5]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/div[1]/ul/div[3]/div/div/div[{k}]/ul/div/li/div/div/div[2]/div[2]/span/button[1]/span"

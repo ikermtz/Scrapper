@@ -1,0 +1,35 @@
+Scrapper:
+- identificar X perfiles
+- analizar una formula para love vs hate
+- analizar el arbol DOM
+- selenium y Xpath
+
+Influencers:
+- Futbolistas:
+    usernames = ["cristiano", "leomessi", "neymarjr", "k.mbappe", "o.sancet", "jamesrodriguez10", "mosalah", "sergioramos", "paulpogba", "joaquinarte"]
+    usernames = ["wojciech.szczesny1", "brunofernandes8", "vinijr", "lukamodric10", "aritzaduriz", "toni.kr8s", "3gerardpique", "ikercasillas", "mb459", "ikermuniain10"]
+    usernames = ["pedri", "alexbbaena", "antogriezmann", "juliaanalvarez", "nicolas_williams9", "ferrantorres", "dani.carvajal.2", "thibautcourtois", "rodrygogoes", "danifuli10"]
+
+- Reality shows --> rafamoratete, shopietatar, lili_mangrinyan, julendlg, noeliafreireb a.braham.g, violeta, shlabragandia, marta_graneroo, sofiasuescun, cristinapedroche, belindapop, jorgeperezdiez, albacarrillooficial, jenniferbaldini97,albagarciamol, sthefanyperez__, gabriellahahlingag, aidagvila, analuiza_alls
+
+- Fitness --> cbum, samson_dauda_, dereklunsford_, the.miraclebear, ramondinopro, wesleyvissers, fede10_10, ryanjterry, keone_prodigy, angelcalderonfrias, josema__beast, philheath, davidlaid, jeff_seid, e_bankssss, simeonpanda, sergioestepa_, raulcarrascoifbbpro, jaycutler, kaigreene, francisco_jose_espin, jorgetabet, espeworkout
+
+- Streamers --> ibaillanos, elxokas, djmariio, auronplay, alphasniper_yt, cachoo01, thegrefg, elrubiuswtf, vegetta777, illojuan, willyrex, ninja
+
+- Moda --> martaa_diiaz, dulceida, mariapombo, lauraescanes, paulagonu, galagonzalez, blancamiro, ariviere, abrilcols, georginagio, carolynmoura, victoriacarotudela, albaalvarezzz, adara_molinero
+
+- Politica --> manuelacarmenac, adacolau, i_montero_, inesarrimadas, santi_abascal, iglesiasturrionpablo, sanchezcastejon, cristinacifuentes, diaz_yolanda_
+
+- F1 --> fernandoalo_oficial , carlossainz55, lewishamilton, georgerussell63 , maxverstappen1, charles_leclerc, oscarpiastri, lando, pierregasly, lance_stroll, sebastianvettel, danielricciardo, kimimatiasraikkonen, valtteribottas, schecoperez, estebanocon, alex_albon, nicholaslatifi, zhouguanyu24
+
+- Musica --> ozuna, riverakiko, rosalia.vt, aitanax, badbunnypr, anuel, karolg, quevedo.pd, rauwalejandro, ladygaga, badgalriri, akabadgyal, taylorswift, shakira, jbalvin, maluma, enriqueiglesias, marcanthony, jlo, justinbieber, kendricklamar, drake, theweeknd, billieeilish, camila_cabello
+
+- Tiktokers --> juliamenugarcia, twinmelody, lolalolita, labelliido, marlucas, sofia_surferss, susana_bicho, khaby00, charlidamelio, addisonraee, dixiedamelio, avani, michaelle, jasoncoffee, sarahmagusara, loren, zachking, llunaclark, mariariieraa, lidiarauet, siiara_, elenagortarii, _onagonfaus, angelamarmol, _riverss_
+
+- Cine --> ana_d_armas, sydney_sweeney, alexandradaddario, zacefron, vindiesel, jordanabrewster gal_gadot, blakelively, chrishemsworth, robertdowneyjr, chrisevans, prattprattpratt, emilia_clarke, sophieturner, maisie_williams, tomhiddleston, chadwickboseman, vancityreynolds, margotrobbielookalike, leonardodicaprio
+
+Idea:
+Obtener un dataset hacendo scrapping de cuentas de instagram --> obtener los 10 ultimos posts con sus comentarios
+- Puede ser interesante añador 3-5 etiquetas por usuario por ejemplo Cristiano tendria futbolista
+Pasar a marta ese dataset y obtener una formula
+Con la formula de marta hacer un chatbot de recomendaciones de seguimiento
