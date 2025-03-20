@@ -469,7 +469,8 @@ def getInfo(driver, usr):
                     print(f"Contenido descargado y guardada en {file_path}")
                 except Exception:
                     print(f"Error al guardar la informacion del post {n}")
-                
+
+                print(f"Post numero {n} analizado")
                 n += 1
                 print(post_comments)
 
