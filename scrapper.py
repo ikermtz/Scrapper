@@ -179,26 +179,69 @@ def getInfo(driver, usr):
     time.sleep(random.randint(2,4))
     profile_url = f"https://www.instagram.com/{usr}/"
     print(f"Extrayendo informacion de {usr}...")
+
     # Obtener número de posts, seguidores y seguidos 
-    numposts_element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((
-        By.XPATH, "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[3]/ul/li[1]/div/span/span/span")))    
-    followers_element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((
-        By.XPATH, "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[3]/ul/li[2]/div/a/span/span/span")))
-    following_element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((
-        By.XPATH, "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[3]/ul/li[3]/div/a/span/span/span")))
-
+    numposts_xpath = "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[3]/ul/li[1]/div/span/span/span"
+    followers_xpath = "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[3]/ul/li[2]/div/a/span/span/span"
+    following_xpath = "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[3]/ul/li[3]/div/a/span/span/span"
     # Obtener el nombre y la descripción
-    nombre_element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((
-        By.XPATH, "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[4]/div/div[1]/span")))
-    presentacion_element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((
-        By.XPATH, "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[4]/div/span/div/span")))
+    nombre_xpath = "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[4]/div/div[1]/span"
+    presentacion_xpath = "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[4]/div/span/div/span"
 
-    # Dataframe con la información del perfil
-    numposts = numposts_element.text
-    followers = followers_element.text
-    following = following_element.text
-    nombre = nombre_element.text
-    presentacion = presentacion_element.text
+    try:
+        print("  Obteniendo numero de posts...")
+        # Obtenemos numero de posts
+        numposts_element = driver.find_element(By.XPATH, numposts_xpath)
+        numposts = numposts_element.text
+        print(f"  Numero de posts: {numposts}")
+    except Exception as e:
+        # No se encuentra el objeto 
+        numposts = 0
+        print("Error obteniendo numero de posts")
+
+    try:
+        print("  Obteniendo numero de followers...")
+        # Obtenemos el numero de followers
+        followers_element = driver.find_element(By.XPATH, followers_xpath)
+        followers = followers_element.text
+        print(f"  Numero de followers: {followers}")
+    except Exception as e:
+        # No se encuentra el objeto 
+        followers = 0
+        print("Error obteniendo numero de followers")
+
+    try:
+        print("  Obteniendo numero de following...")
+        # Obtenemos el following
+        following_element = driver.find_element(By.XPATH, following_xpath)
+        following = following_element.text
+        print(f"  Numero de followers: {following}")
+    except Exception as e:
+        # No se encuentra el objeto 
+        following = 0
+        print("Error obteniendo numero de following")
+
+    try:
+        print("  Obteniendo nombre...")
+        # Obtenemos el nombre
+        nombre_element = driver.find_element(By.XPATH, nombre_xpath)
+        nombre = nombre_element.text
+        print(f"  Nombre: {nombre}")
+    except Exception as e:
+        # No se encuentra el objeto 
+        nombre = "null"
+        print("Error obteniendo nombre")
+    
+    try:
+        print("  Obteniendo presentacion...")
+        # Obtenemos presentacion
+        presentacion_element = driver.find_element(By.XPATH, presentacion_xpath)
+        presentacion = presentacion_element.text
+        print(f"  Presentacion: {presentacion}")
+    except Exception as e:
+        # No se encuentra el objeto 
+        presentacion = "null"
+        print("Error obteniendo presentacion")
 
     df = pd.DataFrame({
         'Usuario': [usr],
@@ -251,7 +294,10 @@ def getInfo(driver, usr):
             mascoments_xpath = "/html/body/div[6]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/div[1]/ul/div[3]/div/div/li/div/button"
             mascoments_xpath_2 = "/html/body/div[5]/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/div[1]/ul/div[3]/div/div/li/div/button"
 
-            time.sleep(random.randint(1,3))
+            if i > 4:
+                time.sleep(random.randint(6,8))
+            else:
+                time.sleep(random.randint(1,3))
 
             # CAPTION
             try:
@@ -295,7 +341,6 @@ def getInfo(driver, usr):
 
             # VERIFICACIÓN DE VIDEO POR VOLUMEN
             if not es_video(driver=driver):
-
                 # LIKES DEL POST
                 try:
                     print("  Obteniendo likes...")
@@ -422,6 +467,8 @@ def getInfo(driver, usr):
                                 com_likes_element = driver.find_element(By.XPATH, likescomment_xpath_2)
                                 com_likes = com_likes_element.text
                                 if com_likes:
+                                    if com_likes == "Responder":
+                                        com_likes = "0 Me gusta"
                                     post_comments.append(com_likes)
                                     print(f"     Numero de likes del comentario {k}: {com_likes}")
                         except NoSuchElementException:
@@ -469,7 +516,7 @@ def getInfo(driver, usr):
                     print(f"Contenido descargado y guardada en {file_path}")
                 except Exception:
                     print(f"Error al guardar la informacion del post {n}")
-
+                
                 print(f"Post numero {n} analizado")
                 n += 1
                 print(post_comments)
@@ -500,9 +547,9 @@ def main():
     # Credenciales de inicio de sesión
     my_user = "manolomountaineer"
     my_pwd = "I1k3e0r1&"
-    usernames = ["cristiano", "leomessi", "neymarjr", "k.mbappe", "o.sancet", "jamesrodriguez10", "mosalah", "sergioramos", "paulpogba", "joaquinarte"]
-    #usernames = ["wojciech.szczesny1", "brunofernandes8", "vinijr", "lukamodric10", "aritzaduriz", "toni.kr8s", "3gerardpique", "ikercasillas", "mb459", "ikermuniain10"]
-    #usernames = ["pedri", "alexbbaena", "antogriezmann", "juliaanalvarez", "nicolas_williams9", "ferrantorres", "dani.carvajal.2", "thibautcourtois", "rodrygogoes", "danifuli10"]
+    username = "caikepro"
+    # "lukamodric10", "aritzaduriz", "toni.kr8s", "3gerardpique", "ikercasillas", "mb459", "ikermuniain10"
+    # "pedri", "alexbbaena", "antogriezmann", "juliaanalvarez", "ferrantorres", "dani.carvajal.2", "thibautcourtois", "danifuli10"
 
 
     driver = driverConfig()
@@ -510,10 +557,9 @@ def main():
     driver = manageCookies(driver=driver)
     driver = logIn(driver=driver, usr=my_user, pwd=my_pwd)
 
-    for u in usernames:
-        createFolder(u)
-        driver = buscarPerfil(driver=driver, usr=u)
-        driver = getInfo(driver=driver, usr=u)
+    createFolder(username)
+    driver = buscarPerfil(driver=driver, usr=username)
+    driver = getInfo(driver=driver, usr=username)
 
     driver.quit()
 
